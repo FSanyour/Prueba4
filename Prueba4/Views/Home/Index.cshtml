@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Prueba4.Models.Perro>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Ingresar Perrito", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NumeroRegistro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Edad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Raza)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tamaño)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pelaje)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaNacimiento)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumeroRegistro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Edad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Raza)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tamaño)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pelaje)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaNacimiento)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id = item.NumeroRegistro }) |
+            @Html.ActionLink("Detalles", "Details", new { id = item.NumeroRegistro }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id = item.NumeroRegistro })
+        </td>
+    </tr>
+}
+
+</table>
